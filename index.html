@@ -11,7 +11,11 @@
 <body>
     <div class="generador">
         <label>Seleccionar imagen:</label>
-        <input type="file" id="selecImage">
+        <select id="selecImage">
+            <option value="">Cortes</option>
+            <option value="src/lomo.png">lomo</option>
+        </select>
+        <!-- <input type="file" id="selecImage"> -->
         <canvas id="postImage"></canvas>
         <label>Precio:</label>
         <input type="text" id="precioImage">

@@ -4,9 +4,10 @@ const btnGenerar = document.querySelector('#btnGenerar');
 const canvas = document.querySelector('#postImage');
 
 let imagen;
+console.log(selecImagen.value);
 
 selecImagen.addEventListener('change',()=>{
-    const imageUrl = URL.createObjectURL(selecImagen.files[0]);
+    const imageUrl = selecImagen.value;
 
     imagen = new Image();
     imagen.src = imageUrl;
