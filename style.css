@@ -1,5 +1,6 @@
 .generador{
     margin: 50px;
+    font-size: 20px;
 }
 label{
     display: block;
@@ -10,4 +11,12 @@ input, select{
 }
 canvas{
     width: 100%;
+}
+button{
+    margin: 0 auto;
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: greenyellow;
+    border-color: grey;
+    border-radius: 15px;
 }

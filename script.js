@@ -1,11 +1,10 @@
 const selecImagen = document.querySelector('#selecImage');
 const precioImage = document.querySelector('#precioImage');
 const btnGenerar = document.querySelector('#btnGenerar');
+const btnDescargar = document.querySelector('#btnDescargar');
 const canvas = document.querySelector('#postImage');
 
 let imagen;
-console.log(selecImagen.value);
-
 selecImagen.addEventListener('change',()=>{
     const imageUrl = selecImagen.value;
 
@@ -20,6 +19,9 @@ selecImagen.addEventListener('change',()=>{
 
 btnGenerar.addEventListener('click',()=>{
     actualizarImage(canvas, imagen, "$"+precioImage.value)
+
+    const dataURL = canvas.toDataURL("image/png",1.0);
+    btnDescargar.href = dataURL;
 })
 
 function actualizarImage(canvas, image, precio) {

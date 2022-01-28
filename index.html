@@ -12,14 +12,15 @@
     <div class="generador">
         <label>Seleccionar imagen:</label>
         <select id="selecImage">
-            <option value="">Cortes</option>
-            <option value="src/lomo.png">lomo</option>
+            <option value="src/nada.png" selected="selected">---- Nada ----</option>
+            <option value="src/lomo.png">Lomo</option>
         </select>
         <!-- <input type="file" id="selecImage"> -->
         <canvas id="postImage"></canvas>
         <label>Precio:</label>
         <input type="text" id="precioImage">
         <button id="btnGenerar">Generar</button>
+        <a id="btnDescargar" href="" download="">Descargar Imagen</a>
     </div>
     <script src="script.js"></script>
 </body>
