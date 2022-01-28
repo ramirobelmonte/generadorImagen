@@ -1,0 +1,13 @@
+.generador{
+    margin: 50px;
+}
+label{
+    display: block;
+}
+input{
+    width: 100%;
+    margin: 5px auto;
+}
+canvas{
+    width: 100%;
+}
