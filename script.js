@@ -24,13 +24,6 @@ btnGenerar.addEventListener('click',()=>{
     const dataURL = canvas.toDataURL("image/png",1.0);
     btnDescargar.href = dataURL;
 })
-btnCompartir.addEventListener('click', async() => {
-    try {
-        await navigator.share(canvas.toDataURL("image/png",1.0))
-    } catch (error) {
-        console.log(error);
-    }
-})
 
 function actualizarImage(canvas, image, precio) {
     const ctx = canvas.getContext("2d");
