@@ -1,6 +1,7 @@
 const selecImagen = document.querySelector('#selecImage');
 const precioImage = document.querySelector('#precioImage');
 const btnGenerar = document.querySelector('#btnGenerar');
+const btnCompartir = document.querySelector('#btnCompartir');
 const btnDescargar = document.querySelector('#btnDescargar');
 const canvas = document.querySelector('#postImage');
 
@@ -22,6 +23,13 @@ btnGenerar.addEventListener('click',()=>{
 
     const dataURL = canvas.toDataURL("image/png",1.0);
     btnDescargar.href = dataURL;
+})
+btnCompartir.addEventListener('click', async() => {
+    try {
+        await navigator.share(canvas.toDataURL("image/png",1.0))
+    } catch (error) {
+        console.log(error);
+    }
 })
 
 function actualizarImage(canvas, image, precio) {
