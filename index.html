@@ -9,18 +9,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="generador">
-        <label>Seleccionar imagen:</label>
-        <select id="selecImage">
-            <option value="src/nada.png" selected="selected">---- Nada ----</option>
-            <option value="src/lomo.png">Lomo</option>
-        </select>
-        <!-- <input type="file" id="selecImage"> -->
+    <div class="container">
         <canvas id="postImage"></canvas>
-        <label>Precio:</label>
-        <input type="text" id="precioImage" placeholder="Escribir el numero aqui">
-        <button id="btnGenerar">Generar</button>
-        <a id="btnDescargar" href="" download="Carnes">Descargar Imagen</a>
+        <form id="formulario" onsubmit="return false">
+            <label>Seleccionar imagen:</label>
+            <select id="selecImage">
+                <option selected="selected">---- Nada ----</option>
+                <option value="src/lomo.png">Lomo</option>
+                <option value="src/Pantilla_A4.png">Pantilla_A4</option>
+            </select>
+            <div id="Cproducto" class="hidden">
+                <label>Producto:</label>
+                <input type="text" id="nombre_producto" placeholder="Escribir el producto aqui">
+            </div>
+            <label>Precio:</label>
+            <input type="number" id="precioImage" placeholder="Escribir el numero aqui">
+            <div class="contenedor">
+                <button id="btnGenerar" class="disable">Generar</button>
+                <a class="hidden" id="btnDescargar" href="" download="Carnes">Descargar Imagen</a>
+            </div>
+        </form>
     </div>
     <script src="script.js"></script>
 </body>
