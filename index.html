@@ -7,6 +7,7 @@
     <title>Generador de imagen</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="src/icon.png" type="image/png">
 </head>
 <body>
     <div class="app">
@@ -14,18 +15,32 @@
             <canvas id="postImage"></canvas>
         </div>
         <form id="formulario" onsubmit="return false">
-            <label>Seleccionar imagen:</label>
-            <select id="selecImage">
-                <option selected="selected">---- Nada ----</option>
-                <option value="src/lomo.png">Lomo</option>
-                <option value="src/Pantilla_A4.png">Pantilla_A4</option>
-            </select>
-            <div id="Cproducto" class="hidden">
+            <div>
+                <label>Seleccionar imagen:</label>
+                <select id="selectImage">
+                    <option selected="selected">---- Nada ----</option>
+                    <option value="rrss">Redes Sociales</option>
+                    <option value="src/A4.png">Impresiones A4</option>
+                </select>                
+            </div>
+            <div id="nameCarne" class="hidden">
+                <label>Corte de carne:</label>
+                <select id="corteCarne">
+                    <option selected="selected">---- Nada ----</option>
+                    <option value="src/cortes/vacio.png">vacio</option>
+                    <option value="src/cortes/costilla.png">costilla</option>
+                    <option value="src/cortes/matambre.png">matambre</option>
+                    <option value="src/cortes/pucheroEspecial.png">puchero especial</option>
+                </select>
+            </div>
+            <div id="nameProduct">
                 <label>Producto:</label>
                 <input type="text" id="nombre_producto" placeholder="Escribir el producto aqui">
             </div>
-            <label>Precio:</label>
-            <input type="number" id="precioImage" placeholder="Escribir el numero aqui">
+            <div id="precio">
+                <label>Precio:</label>
+                <input type="number" id="precioImage" placeholder="Escribir el numero aqui">
+            </div>
             <div class="contenedor">
                 <button id="btnGenerar" class="disable">Generar</button>
                 <a class="hidden" id="btnDescargar" href="" download="Carnes">Descargar Imagen</a>
