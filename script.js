@@ -71,7 +71,6 @@ window.addEventListener('load', function () {
                     btnDescargar.download = corte+'.jpeg'
                     btnDescargar.href = postImage.toDataURL("image/jpeg",1);
 
-                    formulario.reset()
                     btnDescargar.classList.remove('hidden')
 
                 })
