@@ -20,7 +20,40 @@ function generarImagen(canvas, background, corte, precio, producto) {
     canvas.height = height;
     //renderizo
     ctx.drawImage(background, 0, 0);
+    //estilo del texto
+    ctx_precio.font = '100px Poppins';
+    ctx_precio.fillStyle = 'black';
+    ctx_precio.textAlign = 'left';
+    ctx_precio.textBaseLine = 'middle';
+    ctx_precio.fillText('$'+precio, width-730, height-150);
+
+    ctx_producto.font = '100px Poppins';
+    ctx_producto.fillStyle = 'orange';
+    ctx_producto.textAlign = 'center'
+    ctx_producto.textBaseLine = 'middle';        
+    ctx_producto.fillText(producto, width-550, height/4.5);
+
+    ctx.shadowColor = "rgba(0,0,0,0.5)";
+    ctx.shadowBlur = 50;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0
     ctx.drawImage(corte, 850, 0);
+    
+}
+
+
+function generarA4(canvas, background, precio, producto) {
+
+    //rederizo el lienzo base
+    const ctx = canvas.getContext("2d");
+    //parametros de dimensiones
+    const width = background.width;
+    const height = background.height;
+    //asigno los parametros
+    canvas.width = width;
+    canvas.height = height;
+    //renderizo
+    ctx.drawImage(background, 0, 0);
     //estilo del texto
     ctx_precio.font = '100px Poppins';
     ctx_precio.fillStyle = 'black';
