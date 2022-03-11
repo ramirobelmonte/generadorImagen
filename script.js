@@ -34,7 +34,7 @@ function generarImagen(canvas, background, corte, precio, producto) {
     ctx_producto.fillText(producto, width-550, height/4.5);
 
     ctx.shadowColor = "rgba(0,0,0,0.5)";
-    ctx.shadowBlur = 50;
+    ctx.shadowBlur = 100;
     ctx.shadowOffsetX = 0;
     ctx.shadowOffsetY = 0
     ctx.drawImage(corte, 850, 0);
