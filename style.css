@@ -69,5 +69,8 @@ a{
     .app{
         min-height: 100%;
         flex-direction: column;
+    }.imagen{
+        width: 100%;
+        max-height:100%;
     }
 }
