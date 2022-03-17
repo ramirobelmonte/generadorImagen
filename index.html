@@ -33,17 +33,22 @@
                     <option value="src/cortes/pucheroEspecial.png">puchero especial</option>
                     <option value="src/cortes/pucheroComun.png">puchero comun</option>
                     <option value="src/cortes/carneMolida.png">carne molida</option>
+                    <option value="src/cortes/hamburguesa.png">hamburguesa</option>
                 </select>
             </div>
-            <div id="nameProduct">
+            <div id="nameProduct" class="hidden">
                 <label>Producto:</label>
                 <input type="text" id="nombre_producto" placeholder="Escribir el producto aqui">
             </div>
-            <div id="precio">
+            <div id="description" class="hidden">
+                <label>Descripción:</label>
+                <input type="text" id="description_producto" placeholder="Escribir el producto aqui">
+            </div>
+            <div id="precio" class="hidden">
                 <label>Precio:</label>
                 <input type="number" id="precioImage" placeholder="Escribir el numero aqui">
             </div>
-            <div class="contenedor">
+            <div class="contenedor" class="hidden">
                 <button id="btnGenerar" class="disable">Generar</button>
                 <a class="hidden" id="btnDescargar" href="" download="Carnes">Descargar Imagen</a>
             </div>

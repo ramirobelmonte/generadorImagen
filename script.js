@@ -28,9 +28,9 @@ function generarImagen(canvas, background, corte, precio, producto) {
     ctx_precio.fillText('$'+precio, width-730, height-150);
 
     ctx_producto.font = '100px Poppins';
-    ctx_producto.fillStyle = 'orange';
+    ctx_producto.fillStyle = 'black';
     ctx_producto.textAlign = 'center'
-    ctx_producto.textBaseLine = 'middle';        
+    ctx_producto.textBaseLine = 'middle';
     ctx_producto.fillText(producto, width-550, height/4.5);
 
     ctx.shadowColor = "rgba(0,0,0,0.5)";
@@ -38,7 +38,7 @@ function generarImagen(canvas, background, corte, precio, producto) {
     ctx.shadowOffsetX = 0;
     ctx.shadowOffsetY = 0
     ctx.drawImage(corte, 850, 0);
-    
+
 }
 
 
@@ -64,19 +64,16 @@ function generarA4(canvas, background, precio, producto) {
     ctx_producto.font = '100px Poppins';
     ctx_producto.fillStyle = 'orange';
     ctx_producto.textAlign = 'center'
-    ctx_producto.textBaseLine = 'middle';        
+    ctx_producto.textBaseLine = 'middle';
     ctx_producto.fillText(producto, width-550, height/4.5);
-    
+
 }
 
 window.addEventListener('load', function () {
     //reinicio el formulario
     formulario.reset()
-    nameCarne.classList.add('hidden')
-    nameProduct.classList.add('hidden')
-    precio.classList.add('hidden')
-    
-    selectImage.addEventListener('change',(e)=>{   
+
+    selectImage.addEventListener('change',(e)=>{
 
         nameCarne.classList.add('hidden')
         nameProduct.classList.add('hidden')
@@ -97,7 +94,7 @@ window.addEventListener('load', function () {
                     generarImagen(postImage, background, imagen, precioImage.value, corte)
                     btnGenerar.classList.remove('disable')
                 })
-                
+
                 btnGenerar.addEventListener('click',()=>{
                     generarImagen(postImage, background, imagen, precioImage.value, corte)
 
@@ -107,7 +104,7 @@ window.addEventListener('load', function () {
                     btnDescargar.classList.remove('hidden')
 
                 })
-    
+
             })
         }
         else if(valor == 2){
