@@ -70,7 +70,7 @@ function generarA4(canvas, background, precio, producto) {
 }
 
 window.addEventListener('load', function () {
-    //reinicio el formulario
+    //reinicio el formulario adf
     formulario.reset()
 
     selectImage.addEventListener('change',(e)=>{
