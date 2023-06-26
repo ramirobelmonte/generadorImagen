@@ -5,75 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de imagen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="src/icon.png" type="image/png">
 </head>
 <body>
-    <div class="app">
-        <div class="imagen">
-            <canvas id="postImage"></canvas>
+    <div class="container">
+        <div class="row app">
+            <div class="col-6 imagen">
+                <canvas id="postImage"></canvas>
+            </div>
+            <div class="card col-md-auto">
+                <div class="card-header">
+                    Generador de imagenes
+                </div>
+                <div class="card-body">
+                    <form class="" id="formulario" onsubmit="return false">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text">Tipo de imagen</label>
+                            <select id="selectImage" class="form-select">
+                                <option selected>---- SELECCIONAR AQUI ----</option>
+                                <option value="src/bg_television.png">Tele</option>
+                                <option value="src/bg_publicacion.png">Publicación</option>
+                                <option value="src/bg_story.png">Historia</option>
+                            </select>
+                        </div>
+                        <div id="nameCarne" class="hidden input-group mb-3">
+                            <label class="input-group-text">Corte de carne</label>
+                            <select id="corteCarne" class="form-select">
+                                <option selected="selected">---- SELECCIONAR AQUI ----</option>
+                                <option value="src/cortes/vacio.png">vacio</option>
+                                <option value="src/cortes/costilla.png">costilla</option>
+                                <option value="src/cortes/matambre.png">matambre</option>
+                                <option value="src/cortes/pucheroEspecial.png">puchero especial</option>
+                                <option value="src/cortes/pucheroComun.png">puchero comun</option>
+                                <option value="src/cortes/carneMolida.png">carne molida</option>
+                                <option value="src/cortes/hamburguesa.png">hamburguesa</option>
+                                <option value="src/cortes/primo.png">primo</option>
+                                <option value="src/cortes/duro.png">duro</option>
+                                <option value="src/cortes/choquizuela.png">choquizuela</option>
+                                <option value="src/cortes/paletaChata.png">paleta chata</option>
+                                <option value="src/cortes/paletaRolliza.png">paleta rolliza</option>
+                                <option value="src/cortes/trajamon.png">trajamon</option>
+                                <option value="src/cortes/grasa.png">grasa</option>
+                                <option value="src/cortes/chicharron.png">chicharron</option>
+                                <option value="src/cortes/costeleta.png">costeleta</option>
+                                <option value="src/cortes/milanesa.png">milanesa de carne</option>
+                                <option value="src/cortes/tortuguita.png">tortuguita</option>
+                                <option value="src/cortes/costillaCerdo.png">costilla de cerdo</option>
+                                <option value="src/cortes/vacioCerdo.png">vacio de cerdo</option>
+                                <option value="src/cortes/matambreCerdo.png">matambre de cerdo</option>
+                                <option value="src/cortes/costeletaCerdo.png">costeleta de cerdo</option>
+                                <option value="src/cortes/lomoCerdo.png">lomo de cerdo</option>
+                                <option value="src/cortes/tamales.png">tamales</option>
+                                <option value="src/cortes/2patasMuslo.png">2kg de Pata Muslo</option>
+                                <option value="src/cortes/suprema.png">Supremas</option>
+                                <option value="src/cortes/alitasPollo.png">Alitas de pollo</option>
+                                <option value="src/cortes/test.png">esto es un test</option>
+                            </select>
+                        </div>
+                        <div id="precio" class="hidden input-group mb-3">
+                            <label class="input-group-text">Precio</label>
+                            <span class="input-group-text">$</span>
+                            <input class="form-control" type="number" id="precioImage" placeholder="Escribir el numero aqui">
+                        </div>
+                        <div class="btn-group" role="group" class="hidden">
+                            <button id="btnGenerar" type="button" class="btn btn-success">Generar</button>
+                            <button class="hidden btn btn-warning" id="btnDescargar" disabled>Descargar Imagen</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <form id="formulario" onsubmit="return false">
-            <div>
-                <label>Seleccionar imagen:</label>
-                <select id="selectImage">
-                    <option selected="selected">---- SELECCIONAR AQUI ----</option>
-                    <option value="rrss">Redes Sociales</option>
-                    <option value="src/A4.png">Impresiones A4</option>
-                </select>
-            </div>
-            <div id="nameCarne" class="hidden">
-                <label>Corte de carne:</label>
-                <select id="corteCarne">
-                    <option selected="selected">---- SELECCIONAR AQUI ----</option>
-                    <option value="src/cortes/vacio.png">vacio</option>
-                    <option value="src/cortes/costilla.png">costilla</option>
-                    <option value="src/cortes/matambre.png">matambre</option>
-                    <option value="src/cortes/pucheroEspecial.png">puchero especial</option>
-                    <option value="src/cortes/pucheroComun.png">puchero comun</option>
-                    <option value="src/cortes/carneMolida.png">carne molida</option>
-                    <option value="src/cortes/hamburguesa.png">hamburguesa</option>
-                    <option value="src/cortes/primo.png">primo</option>
-                    <option value="src/cortes/duro.png">duro</option>
-                    <option value="src/cortes/choquizuela.png">choquizuela</option>
-                    <option value="src/cortes/paletaChata.png">paleta chata</option>
-                    <option value="src/cortes/paletaRolliza.png">paleta rolliza</option>
-                    <option value="src/cortes/trajamon.png">trajamon</option>
-                    <option value="src/cortes/grasa.png">grasa</option>
-                    <option value="src/cortes/chicharron.png">chicharron</option>
-                    <option value="src/cortes/costeleta.png">costeleta</option>
-                    <option value="src/cortes/milanesa.png">milanesa de carne</option>
-                    <option value="src/cortes/tortuguita.png">tortuguita</option>
-                    <option value="src/cortes/costillaCerdo.png">costilla de cerdo</option>
-                    <option value="src/cortes/vacioCerdo.png">vacio de cerdo</option>
-                    <option value="src/cortes/matambreCerdo.png">matambre de cerdo</option>
-                    <option value="src/cortes/costeletaCerdo.png">costeleta de cerdo</option>
-                    <option value="src/cortes/lomoCerdo.png">lomo de cerdo</option>
-                    <option value="src/cortes/tamales.png">tamales</option>
-                    <option value="src/cortes/2patasMuslo.png">2kg de Pata Muslo</option>
-                    <option value="src/cortes/suprema.png">Supremas</option>
-                    <option value="src/cortes/alitasPollo.png">Alitas de pollo</option>
-                </select>
-            </div>
-            <div id="nameProduct" class="hidden">
-                <label>Producto:</label>
-                <input type="text" id="nombre_producto" placeholder="Escribir el producto aqui">
-            </div>
-            <div id="description" class="hidden">
-                <label>Descripción:</label>
-                <input type="text" id="description_producto" placeholder="Escribir el producto aqui">
-            </div>
-            <div id="precio" class="hidden">
-                <label>Precio:</label>
-                <input type="number" id="precioImage" placeholder="Escribir el numero aqui">
-            </div>
-            <div class="contenedor" class="hidden">
-                <button id="btnGenerar" class="disable">Generar</button>
-                <a class="hidden" id="btnDescargar" href="" download="Carnes">Descargar Imagen</a>
-            </div>
-        </form>
     </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
