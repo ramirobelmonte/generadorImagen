@@ -47,14 +47,17 @@ function renderizarImagen(canvas, bgUrl, productoUrl, productoE, nombre, nombreE
     });
 }
 
+let nombre;
+let precio;
+
 btnGenerar.addEventListener("click", () => {
     // Obtener el canvas
     const canvas = postImage;
     // URL de la imagen a cargar
     const bgUrl = selectImage.value;
     const productoUrl = corteCarne.value;
-    const nombre = corteCarne.selectedOptions[0].text.toUpperCase();
-    const precio = "$" + precioImage.value;
+    nombre = corteCarne.selectedOptions[0].text.toUpperCase();
+    precio = "$" + precioImage.value;
     let productoE = [0, 0];
     let nombreE = [0, 0];
     let precioE = [0, 0];
@@ -98,6 +101,6 @@ btnDescargar.addEventListener('click', () => {
     // Crea un enlace para descargar la imagen
     var link = document.createElement('a');
     link.href = dataURL;
-    link.download = 'canvas.jpg';
+    link.download = `${nombre}-${precio}.jpg`;
     link.click();
 });
